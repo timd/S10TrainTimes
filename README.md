@@ -1,7 +1,7 @@
 ### A Cowardly Test-o-phobe's Guide To Test-Driven Development With iOS
 ### S10 Train Times
 
-#### Being an example from a presentation given at iOSCon London, May 2014
+#### Being an example from a [presentation given at iOSCon London, May 2014](https://skillsmatter.com/skillscasts/5167-tdd-in-ios)
 
 This example demonstrates the use of [OHHTTPStubs](https://github.com/AliSoftware/OHHTTPStubs) to simulate a network connection.
 

@@ -33,6 +33,9 @@
     [self.arrivalSpinner setColor:[UIColor blackColor]];
     [self.departureSpinner setColor:[UIColor blackColor]];
     
+    [self.arrivalTime setText:@"-"];
+    [self.departureTime setText:@"-"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,8 +109,8 @@
         [self.arrivalSpinner setColor:[UIColor blackColor]];
         [self.departureSpinner setColor:[UIColor blackColor]];
         
-        [self.departureTime setText:@""];
-        [self.arrivalTime setText:@""];
+        [self.departureTime setText:@"-"];
+        [self.arrivalTime setText:@"-"];
         
         [self.failureControl setEnabled:YES];
         

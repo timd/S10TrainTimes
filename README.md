@@ -5,7 +5,7 @@
 
 This example demonstrates the use of OHHTTPStubs to simulate a network connection.
 
-The app puports to retrieve the time of the next S10 train between Uitikon Waldegg and Zürich Hauptbahnhof.  In normal circumstances, this data would be available through the magic of the transport.opendata.ch API.
+The app puports to retrieve the time of the next [S10](http://www.zvv.ch/en/) train between [Uitikon Waldegg](http://www.uitikon.ch) and [Zürich Hauptbahnhof](http://en.wikipedia.org/wiki/Zürich_Hauptbahnhof).  In normal circumstances, this data would be available through the magic of the [transport.opendata.ch](http://transport.opendata.ch) API.
 
 In this example, the network request is mocked out by OHHTTPStubs, and loads the data from a JSON file in the app bundle.  It also simulates a slow network response to force the activity indicator to turn red (indicating a long-running request).
 

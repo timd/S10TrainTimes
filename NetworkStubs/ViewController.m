@@ -17,6 +17,10 @@
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *departureSpinner;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *arrivalSpinner;
 @property (nonatomic, weak) NSTimer *spinnerTimer;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *failureControl;
+
+@property (nonatomic) BOOL shouldStubNetwork;
+@property (nonatomic) BOOL shouldStubNetworkFailure;
 @end
 
 @implementation ViewController
@@ -26,14 +30,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.path isEqualToString:@"/v1/connections"];
-    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        return [[OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"response.json",nil)
-                                                 statusCode:200 headers:@{@"Content-Type":@"text/json"}]
-                requestTime:4.0 responseTime:1.0];
-    }];
-
+    [self.arrivalSpinner setColor:[UIColor blackColor]];
+    [self.departureSpinner setColor:[UIColor blackColor]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,11 +48,12 @@
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [self.failureControl setEnabled:NO];
 
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *responseDictionary = (NSDictionary *)responseObject;
-        
         NSArray *connections = [responseDictionary objectForKey:@"connections"];
         
         NSDictionary *resultsDictionary = [connections objectAtIndex:0];
@@ -80,15 +80,36 @@
         [self.arrivalSpinner setAlpha:0.0f];
         [self.departureSpinner stopAnimating];
         [self.arrivalSpinner stopAnimating];
+        [self.arrivalSpinner setColor:[UIColor blackColor]];
+        [self.departureSpinner setColor:[UIColor blackColor]];
         
         [self.departureTime setText:cleanDepTime];
         [self.arrivalTime setText:cleanArrTime];
 
         [self.spinnerTimer invalidate];
         
+        [self.failureControl setEnabled:YES];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        NSLog(@"Failed :(");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network problems"
+                                                        message:@"There was a problem retrieving the data from the network."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
+        
+        [self.departureSpinner setAlpha:0.0f];
+        [self.arrivalSpinner setAlpha:0.0f];
+        [self.departureSpinner stopAnimating];
+        [self.arrivalSpinner stopAnimating];
+        [self.arrivalSpinner setColor:[UIColor blackColor]];
+        [self.departureSpinner setColor:[UIColor blackColor]];
+        
+        [self.departureTime setText:@""];
+        [self.arrivalTime setText:@""];
+        
+        [self.failureControl setEnabled:YES];
         
     }];
     
@@ -110,6 +131,63 @@
     
     [self.arrivalSpinner setColor:[UIColor redColor]];
     [self.departureSpinner setColor:[UIColor redColor]];
+    
+}
+
+-(void)configureNetworkSimulation {
+
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        
+        //return [request.URL.path isEqualToString:@"/v1/connections"];
+        return (self.shouldStubNetwork == YES);
+        
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        
+        if (self.shouldStubNetworkFailure) {
+            
+            return [OHHTTPStubsResponse responseWithError:[NSError errorWithDomain:NSURLErrorDomain
+                                                                              code:kCFURLErrorNotConnectedToInternet
+                                                                          userInfo:nil]];
+        }
+        
+        return [[OHHTTPStubsResponse responseWithFileAtPath:
+                 OHPathForFileInBundle(@"response.json",nil)
+                                                 statusCode:200 headers:@{@"Content-Type":@"text/json"}] requestTime:6.0
+                responseTime:1.0];
+    }];
+
+}
+
+-(IBAction)didChangeFailControlValue:(id)sender {
+    
+    UISegmentedControl *failureControl = (UISegmentedControl *)sender;
+    
+    switch (failureControl.selectedSegmentIndex) {
+        case 0:
+            // Normal network
+            self.shouldStubNetwork = NO;
+            self.shouldStubNetworkFailure = NO;
+            [self.arrivalSpinner setColor:[UIColor blackColor]];
+            [self.departureSpinner setColor:[UIColor blackColor]];
+            break;
+
+        case 1:
+            // Slow network
+            self.shouldStubNetwork = YES;
+            self.shouldStubNetworkFailure = NO;
+            break;
+
+        case 2:
+            // Failing network
+            self.shouldStubNetwork = YES;
+            self.shouldStubNetworkFailure = YES;
+            break;
+
+        default:
+            break;
+    }
+    
+    [self configureNetworkSimulation];
     
 }
 

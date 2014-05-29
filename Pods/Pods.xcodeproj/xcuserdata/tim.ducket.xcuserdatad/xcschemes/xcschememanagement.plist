@@ -6,33 +6,53 @@
 	<dict>
 		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NetworkStubsTests-Kiwi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NetworkStubsTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-OHHTTPStubs.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01839F33993F43D88F32C4DB</key>
+		<key>0DBE477578764FF2A87B1EAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EBF47BD00D1412183E060AB</key>
+		<key>610B03A26E274F25B315A06C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91EF6415163742338ECA953C</key>
+		<key>67781595E1A24975BCE59EF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6AE03F4AC194447CA71D62A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC1AEA56562449DF930C0EA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

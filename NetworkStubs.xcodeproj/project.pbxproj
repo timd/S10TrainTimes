@@ -21,9 +21,9 @@
 		2235A724191FD1AB00DD72BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2235A703191FD1AB00DD72BC /* Foundation.framework */; };
 		2235A725191FD1AB00DD72BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2235A707191FD1AB00DD72BC /* UIKit.framework */; };
 		2235A72D191FD1AB00DD72BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2235A72B191FD1AB00DD72BC /* InfoPlist.strings */; };
-		2235A72F191FD1AB00DD72BC /* NetworkStubsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235A72E191FD1AB00DD72BC /* NetworkStubsTests.m */; };
 		2235A739191FE78A00DD72BC /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = 2235A738191FE78A00DD72BC /* response.json */; };
 		AF3A279F3F0B43FA92151F8F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9DA7BD03664F3B8AD05954 /* libPods.a */; };
+		AFC64DDFFB7B4D98AD55E5BC /* libPods-NetworkStubsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F534C340E9C49C9A5E9D495 /* libPods-NetworkStubsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,9 @@
 		2235A722191FD1AB00DD72BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2235A72A191FD1AB00DD72BC /* NetworkStubsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetworkStubsTests-Info.plist"; sourceTree = "<group>"; };
 		2235A72C191FD1AB00DD72BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2235A72E191FD1AB00DD72BC /* NetworkStubsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkStubsTests.m; sourceTree = "<group>"; };
 		2235A738191FE78A00DD72BC /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
+		6F534C340E9C49C9A5E9D495 /* libPods-NetworkStubsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkStubsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B13745B3744C1B80C980B0 /* Pods-NetworkStubsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkStubsTests.xcconfig"; path = "Pods/Pods-NetworkStubsTests.xcconfig"; sourceTree = "<group>"; };
 		ABDABDF5247145D581F75AFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FF9DA7BD03664F3B8AD05954 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +82,7 @@
 				2235A723191FD1AB00DD72BC /* XCTest.framework in Frameworks */,
 				2235A725191FD1AB00DD72BC /* UIKit.framework in Frameworks */,
 				2235A724191FD1AB00DD72BC /* Foundation.framework in Frameworks */,
+				AFC64DDFFB7B4D98AD55E5BC /* libPods-NetworkStubsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +97,7 @@
 				2235A702191FD1AB00DD72BC /* Frameworks */,
 				2235A701191FD1AB00DD72BC /* Products */,
 				ABDABDF5247145D581F75AFD /* Pods.xcconfig */,
+				84B13745B3744C1B80C980B0 /* Pods-NetworkStubsTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +118,7 @@
 				2235A707191FD1AB00DD72BC /* UIKit.framework */,
 				2235A722191FD1AB00DD72BC /* XCTest.framework */,
 				FF9DA7BD03664F3B8AD05954 /* libPods.a */,
+				6F534C340E9C49C9A5E9D495 /* libPods-NetworkStubsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,13 +126,9 @@
 		2235A709191FD1AB00DD72BC /* NetworkStubs */ = {
 			isa = PBXGroup;
 			children = (
-				036C2EEA1920E35500F4EA3C /* spinner.gif */,
-				2235A738191FE78A00DD72BC /* response.json */,
-				2235A712191FD1AB00DD72BC /* AppDelegate.h */,
-				2235A713191FD1AB00DD72BC /* AppDelegate.m */,
-				2235A715191FD1AB00DD72BC /* Main.storyboard */,
-				2235A718191FD1AB00DD72BC /* ViewController.h */,
-				2235A719191FD1AB00DD72BC /* ViewController.m */,
+				2235A7861921468100DD72BC /* Assets */,
+				2235A7871921468800DD72BC /* App Delegate */,
+				2235A7881921469200DD72BC /* View controller */,
 				2235A71B191FD1AB00DD72BC /* Images.xcassets */,
 				2235A70A191FD1AB00DD72BC /* Supporting Files */,
 			);
@@ -149,7 +149,6 @@
 		2235A728191FD1AB00DD72BC /* NetworkStubsTests */ = {
 			isa = PBXGroup;
 			children = (
-				2235A72E191FD1AB00DD72BC /* NetworkStubsTests.m */,
 				2235A729191FD1AB00DD72BC /* Supporting Files */,
 			);
 			path = NetworkStubsTests;
@@ -162,6 +161,34 @@
 				2235A72B191FD1AB00DD72BC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2235A7861921468100DD72BC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				036C2EEA1920E35500F4EA3C /* spinner.gif */,
+				2235A738191FE78A00DD72BC /* response.json */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		2235A7871921468800DD72BC /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2235A712191FD1AB00DD72BC /* AppDelegate.h */,
+				2235A713191FD1AB00DD72BC /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		2235A7881921469200DD72BC /* View controller */ = {
+			isa = PBXGroup;
+			children = (
+				2235A715191FD1AB00DD72BC /* Main.storyboard */,
+				2235A718191FD1AB00DD72BC /* ViewController.h */,
+				2235A719191FD1AB00DD72BC /* ViewController.m */,
+			);
+			name = "View controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2235A735191FD1AB00DD72BC /* Build configuration list for PBXNativeTarget "NetworkStubsTests" */;
 			buildPhases = (
+				E56C94BF476A424D8A92F36B /* Check Pods Manifest.lock */,
 				2235A71D191FD1AB00DD72BC /* Sources */,
 				2235A71E191FD1AB00DD72BC /* Frameworks */,
 				2235A71F191FD1AB00DD72BC /* Resources */,
+				93D4322BCE324CA4A1D0F8DC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +290,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		93D4322BCE324CA4A1D0F8DC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NetworkStubsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A6599635E41445D18A0C14CD /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +321,21 @@
 			showEnvVarsInLog = 0;
 		};
 		D9A7E0C6FAF943BC97D99C24 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E56C94BF476A424D8A92F36B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2235A72F191FD1AB00DD72BC /* NetworkStubsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +508,7 @@
 		};
 		2235A736191FD1AB00DD72BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B13745B3744C1B80C980B0 /* Pods-NetworkStubsTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetworkStubs.app/NetworkStubs";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -472,6 +531,7 @@
 		};
 		2235A737191FD1AB00DD72BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B13745B3744C1B80C980B0 /* Pods-NetworkStubsTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetworkStubs.app/NetworkStubs";
 				FRAMEWORK_SEARCH_PATHS = (

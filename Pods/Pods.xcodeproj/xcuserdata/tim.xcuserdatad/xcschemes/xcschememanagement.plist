@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NetworkStubsTests-Kiwi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NetworkStubsTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-OHHTTPStubs.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01839F33993F43D88F32C4DB</key>
+		<key>405BE3CA2B40461688B0DB1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EBF47BD00D1412183E060AB</key>
+		<key>55F4EA5E72FE4D5AA90EC923</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91EF6415163742338ECA953C</key>
+		<key>59146537819B4B4C89B033DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7F7E61A97D94083A3A2401E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4FCC4A1606A4732B1158EE8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

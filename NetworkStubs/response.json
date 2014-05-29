@@ -14,7 +14,7 @@
                     "distance": null
                     },
                     "arrival": null,
-                    "departure": "2014-05-11T23:33:00+0200",
+                    "departure": "2014-05-11T12:00:00+0200",
                     "delay": null,
                     "platform": "",
                     "prognosis": {
@@ -48,7 +48,7 @@
                     },
                     "distance": null
                     },
-                    "arrival": "2014-05-11T19:41:00+0200",
+                    "arrival": "2014-05-11T13:00:00+0200",
                     "departure": null,
                     "delay": null,
                     "platform": "",

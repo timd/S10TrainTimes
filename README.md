@@ -13,7 +13,14 @@ In this example, the network request is mocked out by OHHTTPStubs, and loads the
 
 1. Xcode 5.1 or later
 1. [Kiwi](https://github.com/allending/Kiwi)
+1. [Cocoapods](http://cocoapods.org)
 1. [OHHTTPStubs](https://github.com/AliSoftware/OHHTTPStubs)
+
+#### Installation
+
+1. Fork this repo, then clone it.
+1. Run `pod install`
+1. Open the `NetworkStubs.xcworkspace` file
 
 ### Licensing
 
